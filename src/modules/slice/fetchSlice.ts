@@ -16,9 +16,11 @@ const initialFetchState: FetchActionState = {
 };
 
 const fetchDataSlice = createSlice({
-  name: "outlet/fetch",
+  name: "data/fetch",
   initialState: initialFetchState,
-  reducers: {},
+  reducers: {
+    reset: () => initialFetchState,
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAction.pending, (state) => {
@@ -43,3 +45,4 @@ const fetchDataSlice = createSlice({
 });
 
 export const fetchDataReducer = fetchDataSlice.reducer;
+export const { reset } = fetchDataSlice.actions;
