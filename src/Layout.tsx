@@ -4,8 +4,12 @@ import Header from "./components/header";
 const Layout = () => {
   return (
     <>
-      <Header />
-      <Outlet />
+      <div className="h-screen">
+        <Header />
+        <div className="h-[90vh] overflow-y-scroll no-scrollbar overflow-x-hidden mt-[10vh]">
+          <Outlet />
+        </div>
+      </div>
     </>
   );
 };
